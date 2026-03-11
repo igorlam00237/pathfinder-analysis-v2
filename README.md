@@ -6,6 +6,18 @@
 
 ---
 
+## 📄 Rapport HTML interactif
+
+Le pipeline génère un rapport HTML complet, consultable directement dans le navigateur.
+
+👉 **[Voir le rapport de la mission MSN-2024-DKK-007](outputs/rapport_MSN-2024-DKK-007.html)**
+
+### Aperçu du dashboard
+
+![Dashboard Pathfinder](outputs/dashboard_preview.png)
+
+---
+
 ## Contexte
 
 Acwa Robotics développe le robot **Pathfinder**, qui circule à l'intérieur des canalisations d'eau potable pour en inspecter l'état structural.  

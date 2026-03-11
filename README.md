@@ -10,17 +10,27 @@
 
 Le pipeline génère un rapport HTML complet, consultable directement dans le navigateur.
 
-👉 **[Voir le rapport de la mission MSN-2024-DKK-007](outputs/rapport_MSN-2024-DKK-007.html)**
+**Pour l'ouvrir :**
+1. Télécharger le fichier [`outputs/rapport_MSN-2024-DKK-007.html`](outputs/rapport_MSN-2024-DKK-007.html)
+2. Double-cliquer dessus — il s'ouvre automatiquement dans votre navigateur
 
-### Aperçu du dashboard
+Un aperçu du rapport est disponible ici : [`outputs/rapport_MSN-2024-DKK-007.txt`](outputs/rapport_MSN-2024-DKK-007.txt)
 
-![Dashboard Pathfinder](outputs/dashboard_preview.png)
+---
+
+## 📊 Aperçu des visualisations
+
+![Profil d'inspection](outputs/chart_profil_inspection.png)
+
+![Statistiques](outputs/chart_statistiques.png)
+
+![Cartographie des défauts](outputs/chart_cartographie.png)
 
 ---
 
 ## Contexte
 
-Acwa Robotics développe le robot **Pathfinder**, qui circule à l'intérieur des canalisations d'eau potable pour en inspecter l'état structural.  
+Acwa Robotics développe le robot **Pathfinder**, qui circule à l'intérieur des canalisations d'eau potable pour en inspecter l'état structural.
 À chaque mission, le robot collecte des données issues de plusieurs capteurs embarqués :
 - 📡 **Capteur ultrasons** → épaisseur de paroi, taux de corrosion
 - 📍 **GPS / encodeur odométrique** → position curviligne
@@ -33,26 +43,28 @@ Ce projet simule le workflow complet d'un **Data Analyst** traitant ces données
 ## Structure du projet
 
 ```
-pathfinder-analysis/
+pathfinder-analysis-v2/
 │
 ├── 📓 notebooks/
-│   └── analyse_pathfinder.ipynb   ← Notebook principal (workflow complet)
+│   └── analyse_pathfinder.ipynb        ← Notebook principal (workflow complet)
 │
 ├── 📂 data/
-│   └── mission_sample.csv         ← Données brutes simulées (120 mesures)
+│   └── mission_sample.csv              ← Données brutes simulées (120 mesures)
 │
 ├── 📂 src/
-│   └── generate_data.py           ← Script de génération du dataset
+│   ├── generate_data.py                ← Script de génération du dataset
+│   └── generate_report.py             ← Script de génération du rapport HTML
 │
-├── 📂 outputs/                    ← Graphiques et exports générés
+├── 📂 outputs/                         ← Graphiques et exports générés
+│   ├── rapport_MSN-2024-DKK-007.html  ← Rapport interactif (à télécharger)
+│   ├── rapport_MSN-2024-DKK-007.txt   ← Synthèse texte
+│   ├── mission_analysee_MSN-2024-DKK-007.csv
 │   ├── chart_profil_inspection.png
 │   ├── chart_statistiques.png
 │   ├── chart_cartographie.png
 │   ├── eda_distributions.png
 │   ├── eda_correlation.png
-│   ├── detection_zscore.png
-│   ├── mission_analysee_MSN-2024-DKK-007.csv
-│   └── rapport_MSN-2024-DKK-007.txt
+│   └── detection_zscore.png
 │
 ├── requirements.txt
 ├── .gitignore
@@ -86,7 +98,7 @@ CSV brut (données capteurs)
          │         (profil d'inspection, cartographie, stats)
          ▼
   💾  Étape 6 — Export
-                  (CSV enrichi + rapport texte)
+                  (CSV enrichi + rapport HTML + rapport texte)
 ```
 
 ---
@@ -133,16 +145,19 @@ Un point est anormal si `z < -2.0` (dans le 2.5% inférieur de la distribution).
 
 ```bash
 # 1. Cloner le dépôt
-git clone https://github.com/igorlam00237/pathfinder-analysis
-cd pathfinder-analysis
+git clone https://github.com/igorlam00237/pathfinder-analysis-v2
+cd pathfinder-analysis-v2
 
 # 2. Installer les dépendances
 pip install -r requirements.txt
 
-# 3. (Optionnel) Régénérer les données simulées
+# 3. Générer les données simulées
 python src/generate_data.py
 
-# 4. Lancer Jupyter et ouvrir le notebook
+# 4. Générer le rapport HTML
+python src/generate_report.py
+
+# 5. Lancer Jupyter et ouvrir le notebook
 jupyter notebook notebooks/analyse_pathfinder.ipynb
 ```
 

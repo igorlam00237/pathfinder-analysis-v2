@@ -1,0 +1,31 @@
+
+╔══════════════════════════════════════════════════════════════╗
+║         RAPPORT DE MISSION — MSN-2024-DKK-007             ║
+╠══════════════════════════════════════════════════════════════╣
+║  Réseau     : Dunkerque — Zone Nord                    
+║  Opérateur  : SUEZ / Agence de l'eau Artois-Picardie    
+║  Robot      : Pathfinder-01                                  
+║  Généré le  : 11/03/2026 à 18:13                          
+╠══════════════════════════════════════════════════════════════╣
+║  INDICATEURS                                                 
+║                                                              
+║  Points analysés      :  120                              
+║  Longueur inspectée   :  487.0 m                        
+║  Épaisseur moyenne    :  8.06 mm (nom. 8.5 mm)           
+║  Épaisseur minimale   :  5.01 mm                         
+║  Anomalies détectées  :   23 (19.2% du tronçon)           
+╠══════════════════════════════════════════════════════════════╣
+║  DISTRIBUTION DES DÉFAUTS                                    
+║                                                              
+║  OK        :  97 pts                               
+║  FAIBLE    :   6 pts → surveillance 6 mois              
+║  MODÉRÉ    :   6 pts → planifier intervention           
+║  CRITIQUE  :  11 pts → INTERVENTION URGENTE           
+╠══════════════════════════════════════════════════════════════╣
+║  TOP 5 DÉFAUTS LES PLUS GRAVES                               
+║  • Pos  331.5 m | Ép. 5.01 mm | Perte 41.1% | CRITIQUE  
+║  • Pos  306.9 m | Ép. 5.17 mm | Perte 39.2% | CRITIQUE  
+║  • Pos  315.1 m | Ép. 5.39 mm | Perte 36.6% | CRITIQUE  
+║  • Pos  290.6 m | Ép. 5.54 mm | Perte 34.8% | CRITIQUE  
+║  • Pos  335.6 m | Ép. 5.67 mm | Perte 33.3% | CRITIQUE  
+╚══════════════════════════════════════════════════════════════╝
